@@ -1,0 +1,35 @@
+interface Reproductor {
+    volumen: number;
+    sec: number;
+    song: string;
+    detail: Detail;
+}
+
+interface Detail { 
+    author: string;
+    year: number;
+}
+
+const reproductor: Reproductor = {
+    volumen: 90,
+    sec: 30,
+    song: 'mi vieja mula',
+    detail: {
+        author: 'simpsons',
+        year: 1997
+    }
+}
+
+// const { volumen, song, detail } = reproductor;
+// const { author } =  detail;
+ const { volumen:vol, song, detail:{author:authorDetail} } = reproductor;
+
+console.log('Volumen: ', vol)
+console.log('Song: ', song)
+//console.log('author: ', author)
+console.log('author: ', authorDetail)
+
+
+const dbz: string[] = ['Goku', 'Vegeta', 'Trunks'];
+const [p1, p2, p3]= dbz;
+console.log('Personaje 1', p1)
